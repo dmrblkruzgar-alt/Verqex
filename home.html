@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Verqex – Ana Sayfa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="home">
+  <h1>Hoş geldin, <span id="user"></span></h1>
+  <h2>Kanalın: <span id="channel"></span></h2>
+</div>
+
+<script>
+  const user = localStorage.getItem("verqex_user");
+  const channel = JSON.parse(localStorage.getItem("verqex_channel"));
+
+  document.getElementById("user").textContent = user;
+  document.getElementById("channel").textContent = channel?.name || "Kanal bulunamadı";
+</script>
+
+</body>
+</html>
